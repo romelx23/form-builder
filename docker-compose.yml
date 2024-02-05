@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  formbuildDB:
+    image: postgres:15.3
+    container_name: formbuildDB
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: formbuild
+      POSTGRES_PASSWORD: formbuild
+    volumes:
+      - ./postgres:/var/lib/postgresql/data
+  pgadmin:
+    container_name: pgadmin-formbuild
+    image: dpage/pgadmin4
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: root@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: root
+    depends_on:
+      - formbuildDB
