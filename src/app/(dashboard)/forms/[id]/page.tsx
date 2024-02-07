@@ -13,6 +13,7 @@ import { format, formatDistance } from "date-fns";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
 import { RefreshBtn } from "@/components/common/RefreshBtn";
+import { PermissionBtn } from "@/components/common/PermissionBtn";
 
 async function FormDetailPage({
   params,
@@ -43,6 +44,13 @@ async function FormDetailPage({
         <div className="flex justify-between container">
           <h1 className="text-4xl font-bold truncate">{form.name}</h1>
           <VisitBtn shareUrl={form.shareURL} />
+        </div>
+        <div className="flex justify-between container mt-2">
+          <h1 className="text-xl font-semibold truncate">tipo: {form.typePermission}</h1>
+          <PermissionBtn
+            id={form.id}
+            typePermission={form.typePermission}
+          />
         </div>
       </div>
       <div className="py-4 border-b border-muted">

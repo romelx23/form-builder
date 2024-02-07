@@ -1,31 +1,28 @@
-Discord server for problems/help
+# PageForm
 
-Youtube video
+basado en el video de Youtube de [CodeWithKilton](https://youtu.be/QGXUUXy0AMw?si=MXotxCO4HQaV2IN9)
 
-LIVE DEMO
+En este proyecto se implementa un formulario de arrastrar y soltar con Nextjs 14 y Dnd-kit. El formulario se puede compartir y se puede ver un resumen de las visitas y envíos.:
 
-In this 4 hour tutorial we are going to build this full stack PageForm application.
+- Nextjs 14 with AppRouter
+- Dnd-kit library
+- ServerActions
+- Typescript
+- Tailwindcss / Shadcn UI
+- Vercel PostgreSQL
+- Prisma as ORM
 
-We are going to build this with:
+## Features:
 
-Nextjs 13 with AppRouter
-Dnd-kit library
-ServerActions
-Typescript
-Tailwindcss / Shadcn UI
-Vercel PostgreSQL
-Prisma as ORM
-Features:
-
-Responsive
-Create forms with a stunning drag and drop designer
-Layout fields: Title, SubTitle, Spacer, Separator, Paragraph
-Form fields: Text, Number, Select, Date, Checkbox, Textarea
-Is easy to add and customize new fields
-Form preview dialog
-Share form url
-Form submission/validation
-Form stats: visits and submissions
+- Responsive
+- Create forms with a stunning drag and drop designer
+- Layout fields: Title, SubTitle, Spacer, Separator, Paragraph
+- Form fields: Text, Number, Select, Date, Checkbox, Textarea
+  Is easy to add and customize new fields
+- Form preview dialog
+- Share form url
+- Form submission/validation
+- Form stats: visits and submissions
 
 ## Getting Started
 
@@ -61,3 +58,39 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Start docker
+
+```bash
+docker-compose up -d
+```
+
+## Config Prisma
+
+```bash
+npx prisma generate
+```
+
+## Start prisma studio
+
+```bash
+npx prisma studio
+```
+
+## Start prisma migrate
+
+```bash
+npx prisma migrate dev --name init
+```
+
+## Start prisma seed
+
+```bash
+npx prisma db seed
+```
+
+## Start prisma reset
+
+```bash
+npx prisma db reset
+```

@@ -10,8 +10,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "PageForm Romel",
-  description: "Check my youtube channel for more content",
+  title: "PageForm",
+  description: "Crea tu formulario a tu medida",
 };
 
 export default function RootLayout({

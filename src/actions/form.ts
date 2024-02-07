@@ -12,6 +12,7 @@ export async function GetFormStats() {
     console.log("user not found", user);
     throw new UserNotFoundErr();
   }
+  console.log({ user });
 
   const stats = await prisma.form.aggregate({
     where: {
@@ -22,6 +23,8 @@ export async function GetFormStats() {
       submissions: true,
     },
   });
+
+  console.log({ stats });
 
   const visits = stats._sum.visits || 0;
   const submissions = stats._sum.submissions || 0;
@@ -134,11 +137,30 @@ export async function PublishForm(id: number) {
   });
 }
 
+export async function ChangePermissionForm(id: number, typePermission: string) {
+  const user = await currentUser();
+  console.log({ user });
+  if (!user) {
+    throw new UserNotFoundErr();
+  }
+
+  return await prisma.form.update({
+    data: {
+      typePermission: typePermission,
+    },
+    where: {
+      userId: user.id,
+      id,
+    },
+  });
+}
+
 export async function GetFormContentByUrl(formUrl: string) {
   try {
     const updateForm = await prisma.form.update({
       select: {
         content: true,
+        typePermission: true,
       },
       data: {
         visits: {

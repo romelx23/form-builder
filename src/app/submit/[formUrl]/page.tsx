@@ -20,7 +20,13 @@ async function SubmitPage({
 
   const formContent = JSON.parse(form.content) as FormElementInstance[];
 
-  return <FormSubmitComponent formUrl={params.formUrl} content={formContent} />;
+  return <>
+    {
+      form.typePermission === "public" ?
+        <FormSubmitComponent formUrl={params.formUrl} content={formContent} />
+        : <h1>Form is private</h1>
+    }
+  </>;
 }
 
 export default SubmitPage;
