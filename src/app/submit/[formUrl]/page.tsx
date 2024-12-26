@@ -24,7 +24,9 @@ async function SubmitPage({
     {
       form.typePermission === "public" ?
         <FormSubmitComponent formUrl={params.formUrl} content={formContent} />
-        : <h1>Form is private</h1>
+        : <div className="w-full max-w-4xl mx-auto p-4">
+          <h1 className="text-3xl font-bold text-center">Form is not public</h1>
+        </div>
     }
   </>;
 }

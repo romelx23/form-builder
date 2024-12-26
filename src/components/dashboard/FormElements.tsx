@@ -1,5 +1,6 @@
 import { CheckboxFieldFormElement } from "../fields/CheckboxField";
 import { DateFieldFormElement } from "../fields/DateFormField";
+import { ImagePreviewFormElement } from "../fields/ImagePreview";
 import { NumberFieldFormElement } from "../fields/NumberField";
 import { ParagprahFieldFormElement } from "../fields/ParagraphField";
 import { SelectFieldFormElement } from "../fields/SelectField";
@@ -13,6 +14,7 @@ import { TitleFieldFormElement } from "../fields/TitleField";
 export type ElementsType =
     | "TextField"
     | "TitleField"
+    | "ImagePreview"
     | "SubTitleField"
     | "ParagraphField"
     | "SeparatorField"
@@ -63,6 +65,7 @@ type FormElementsType = {
 export const FormElements: FormElementsType = {
     TextField: TextFieldFormElement,
     TitleField: TitleFieldFormElement,
+    ImagePreview: ImagePreviewFormElement,
     SubTitleField: SubTitleFieldFormElement,
     ParagraphField: ParagprahFieldFormElement,
     SeparatorField: SeparatorFieldFormElement,
